@@ -113,6 +113,15 @@ describe('Literal', function () {
         datatype: 'http://www.w3.org/2001/XMLSchema#string',
       }).should.be.false;
     });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: '',
+        language: '',
+        datatype: 'http://www.w3.org/2001/XMLSchema#string',
+      });
+    });
   });
 
   describe('A Literal instance created from a string without language or datatype', function () {
@@ -202,6 +211,15 @@ describe('Literal', function () {
         language: '',
         datatype: 'http://www.w3.org/2001/XMLSchema#string',
       }).should.be.false;
+    });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: 'my @^^ string',
+        language: '',
+        datatype: 'http://www.w3.org/2001/XMLSchema#string',
+      });
     });
   });
 
@@ -293,6 +311,15 @@ describe('Literal', function () {
         datatype: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString',
       }).should.be.false;
     });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: '',
+        language: 'en-us',
+        datatype: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString',
+      });
+    });
   });
 
   describe('A Literal instance created from a string without language or datatype', function () {
@@ -382,6 +409,15 @@ describe('Literal', function () {
         language: 'en-us',
         datatype: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString',
       }).should.be.false;
+    });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: 'my @^^ string',
+        language: 'en-us',
+        datatype: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString',
+      });
     });
   });
 
@@ -473,6 +509,15 @@ describe('Literal', function () {
         datatype: 'http://example.org/types#type',
       }).should.be.false;
     });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: '',
+        language: '',
+        datatype: 'http://example.org/types#type',
+      });
+    });
   });
 
   describe('A Literal instance created from a string with a datatype', function () {
@@ -562,6 +607,15 @@ describe('Literal', function () {
         language: '',
         datatype: 'http://example.org/types#type',
       }).should.be.false;
+    });
+
+    it('should provide a JSON representation', function () {
+      literal.toJSON().should.deep.equal({
+        termType: 'Literal',
+        value: 'my @^^ string',
+        language: '',
+        datatype: 'http://example.org/types#type',
+      });
     });
   });
 });
